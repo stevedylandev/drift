@@ -7,7 +7,11 @@ drift uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## [Unreleased]
+## [1.3.0] — 2026-09-10
+
+### Added
+
+- `exit_on_mouse` option in `[engine]` and matching `--exit-on-mouse` flag — restores the previous click-to-quit behavior for anyone who wants it
 
 ### Changed
 
@@ -287,6 +291,7 @@ Activate with `eval "$(drift shell-init zsh)"` (or bash/fish).
 - Pre-built releases for macOS and Linux (amd64 + arm64)
 - goreleaser pipeline with SHA-256 checksums
 
+[1.3.0]: https://github.com/phlx0/drift/releases/tag/v1.3.0
 [1.2.0]: https://github.com/phlx0/drift/releases/tag/v1.2.0
 [1.1.0]: https://github.com/phlx0/drift/releases/tag/v1.1.0
 [1.0.0]: https://github.com/phlx0/drift/releases/tag/v1.0.0
