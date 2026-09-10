@@ -118,7 +118,12 @@ func (e *Engine) Run() error {
 	screen.SetStyle(tcell.StyleDefault)
 	screen.Clear()
 	screen.HideCursor()
-	screen.EnableMouse(tcell.MouseButtonEvents)
+	// Mouse reporting is only enabled when clicks should quit drift. Left off,
+	// the terminal never forwards clicks, so click-to-focus and text selection
+	// keep working while drift runs.
+	if e.cfg.Engine.ExitOnMouse {
+		screen.EnableMouse(tcell.MouseButtonEvents)
+	}
 
 	e.screen = screen
 	e.allThemes = e.cfg.AllThemes()

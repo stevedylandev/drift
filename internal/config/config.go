@@ -54,6 +54,10 @@ type EngineConfig struct {
 	// 3×3 grid, to reduce static pixel retention on OLED displays. Has no
 	// effect on typical terminal emulators where the OS handles burn-in.
 	OLEDShift bool `toml:"oled_shift"`
+	// ExitOnMouse quits drift when the mouse is clicked in the terminal.
+	// Off by default: enabling it also turns on mouse reporting, which takes
+	// over click-to-focus and the terminal's own text selection.
+	ExitOnMouse bool `toml:"exit_on_mouse"`
 }
 
 type SceneConfig struct {
@@ -530,6 +534,7 @@ theme         = "cosmic" # cosmic | nord | dracula | catppuccin | gruvbox | fore
 shuffle       = true   # randomise scene order
 hide_tmux_status = false  # tmux: hide status bar while displaying scene
 oled_shift       = false  # shift scene content by 1 cell every 10s to reduce OLED burn-in; only useful on bare OLED hardware
+exit_on_mouse    = false  # quit on mouse click; also captures the mouse, disabling terminal text selection
 
 [scene.constellation]
 star_count      = 80

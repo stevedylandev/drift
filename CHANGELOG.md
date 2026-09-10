@@ -7,6 +7,14 @@ drift uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [Unreleased]
+
+### Changed
+
+- **mouse clicks no longer quit drift** — any click used to exit immediately, so on window managers that deliver the focus click to the application it was impossible to switch to drift's terminal without dismissing it; mouse reporting is now off unless `exit_on_mouse = true` is set in `[engine]` or `--exit-on-mouse` is passed, which also leaves the terminal's own text selection and scrollback usable while drift runs ([#59](https://github.com/phlx0/drift/issues/59))
+
+---
+
 ## [1.2.0] — 2026-09-04
 
 ### Added
